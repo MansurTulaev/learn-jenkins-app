@@ -4,6 +4,7 @@ pipeline {
         BUILD_FILE_NAME = 'build/index.html'
     }
     stages {
+        /*
         stage('Build') {
             agent {
                 docker {
@@ -22,6 +23,7 @@ pipeline {
                 '''
             }
         }
+        */
         stage('Test') {
             agent {
                 docker {
@@ -32,7 +34,7 @@ pipeline {
             steps {
                 //cleanWs()
                 sh '''
-                    echo 'Test stage'
+                    #echo 'Test stage'
                     echo $BUILD_FILE_NAME
                     test -f $BUILD_FILE_NAME
                     npm test
