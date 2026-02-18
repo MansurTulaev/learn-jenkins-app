@@ -12,6 +12,7 @@ pipeline {
                 }
             }
             steps {
+                cleanWs()
                 sh '''
                     echo 'Test stage'
                     echo $BUILD_FILE_NAME
